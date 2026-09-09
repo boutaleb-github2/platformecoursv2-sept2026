@@ -1,13 +1,13 @@
 const express = require("express")
 const app = express();
-const indexRouter = require("./routes/index")
+//const indexRouter = require("./routes/index")
 const expressLayouts = require("express-ejs-layouts")
 
 app.set("view engine", "ejs");
 app.use(expressLayouts);
 app.set("layout","layouts/main") // path of principal layout
 
-app.use("/", indexRouter);
+app.use("/", require("./routes/index"));
 
 
 app.listen(3000,()=>{
